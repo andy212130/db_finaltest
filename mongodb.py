@@ -30,7 +30,7 @@ def creat_table_senser():
 def create_table_data():
     data = db['data']   #建立Data資料表
 #將偵測資料存入資料庫
-def newdata(type,mc,data,s):
+def newdata(type,data,s):
     date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     if type == 't':
         unit = 'C'
@@ -51,12 +51,12 @@ def main():
         h2 = random.uniform(40.0,60.0)
         t3 = random.uniform(33.0,42.0)
         h3 = random.uniform(40.0,60.0)
-        newdata('t',t1,date,'001')
-        newdata('h',h1,date,'002')
-        newdata('t',t2,date,'003')
-        newdata('h',h2,date,'004')
-        newdata('t',t3,date,'005')
-        newdata('h',h3,date,'006')
+        newdata('t',t1,'001')
+        newdata('h',h1,'002')
+        newdata('t',t2,'003')
+        newdata('h',h2,'004')
+        newdata('t',t3,'005')
+        newdata('h',h3,'006')
         time.sleep(5)    #每五秒感測一次
 
 if __name__ == '__main__':
