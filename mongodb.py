@@ -41,6 +41,7 @@ def newdata(type,data,s):
     else:
         unit = '%'
         status = 'common'
+    data=str(data)
     next_data={'senser':s,'data':data,'status':status,'date':date}
     data.insert_one(next_data)
 def main():
