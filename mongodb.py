@@ -28,7 +28,7 @@ def creat_table_senser():
     for se in senser.find():
         print(se)
 def create_table_data():
-    data = db['data']   #建立Data資料表
+    Tdata = db['Tdata']   #建立Data資料表
 #將偵測資料存入資料庫
 def newdata(type,data,s):
     date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -43,7 +43,7 @@ def newdata(type,data,s):
         status = 'common'
     data=str(data)
     next_data={'senser':s,'data':data,'status':status,'date':date}
-    data.insert_one(next_data)
+    Tdata.insert_one(next_data)
 def main():
     while(1):
         t1 = random.uniform(33.0,42.0)
