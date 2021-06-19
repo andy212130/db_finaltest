@@ -30,15 +30,15 @@ def creat_table_senser():
 def create_table_data():
     data = db['data']   #建立Data資料表
 #將偵測資料存入資料庫
-def newdata(type,data,s):
+def newdata(type,mc,data,s):
     date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     if type == 't':
         unit = 'C'
         if data >= 40:
             status='overheat'
-        else
+        else:
             status='common'
-    else
+    else:
         unit = '%'
         status = 'common'
     next_data={'senser':s,'data':data,'status':status,'date':date}
@@ -61,10 +61,10 @@ def main():
 
 if __name__ == '__main__':
     try:
-        creat_database()
-        create_table_factory()
-        creat_table_senser()
-        create_table_data()
+        db = creat_database()
+        fa = create_table_factory()
+        se = creat_table_senser()
+        da = create_table_data()
     except Exception as e:
         print(e)
     main()
